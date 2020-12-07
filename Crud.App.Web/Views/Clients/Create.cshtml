@@ -1,0 +1,75 @@
+﻿@model Crud.App.Domains.Client
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Client</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BussinessID" class="control-label"></label>
+                <input asp-for="BussinessID" class="form-control" />
+                <span asp-validation-for="BussinessID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VAT_ID" class="control-label"></label>
+                <input asp-for="VAT_ID" class="form-control" />
+                <span asp-validation-for="VAT_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdressID" class="control-label"></label>
+                <select asp-for="AdressID" class ="form-control" asp-items="ViewBag.AdressID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeliveryAdressID" class="control-label"></label>
+                <select asp-for="DeliveryAdressID" class ="form-control" asp-items="ViewBag.DeliveryAdressID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreditLimit" class="control-label"></label>
+                <input asp-for="CreditLimit" class="form-control" />
+                <span asp-validation-for="CreditLimit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PricelistCode" class="control-label"></label>
+                <select asp-for="PricelistCode" class="form-control"></select>
+                <span asp-validation-for="PricelistCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientsGroupID" class="control-label"></label>
+                <select asp-for="ClientsGroupID" class ="form-control" asp-items="ViewBag.ClientsGroupID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

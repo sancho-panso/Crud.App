@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Crud.App.Domains.ItemsGroup>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemsGroupCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemsGroupName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemsGroupNameEN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemsGroupNameRU)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParentItemsGroupCode)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemsGroupCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemsGroupName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemsGroupNameEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemsGroupNameRU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentItemsGroupCode)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ItemsGroupID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ItemsGroupID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ItemsGroupID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

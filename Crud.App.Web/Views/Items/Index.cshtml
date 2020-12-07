@@ -1,0 +1,125 @@
+﻿@model IEnumerable<Crud.App.Domains.Item>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemsGroup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemNomNr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemNameEN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemNameRU)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemQR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Measure)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Package)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pricelist_A)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pricelist_B)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pricelist_C)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pricelist_D)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WharehouseQNT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemsGroup.ItemsGroupCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemNomNr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemNameEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemNameRU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemQR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Measure)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Package)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pricelist_A)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pricelist_B)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pricelist_C)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pricelist_D)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WharehouseQNT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ItemID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ItemID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ItemID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
